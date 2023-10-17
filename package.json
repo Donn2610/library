@@ -1,0 +1,70 @@
+{
+  "name": "sensit-slider",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Sensit Slider library package from SENSIT",
+  "author": "SENSIT",
+  "license": "MIT",
+  "homepage": "https://feelbelt.de/de/",
+  "repository": {
+    "type": "bitbucket",
+    "url": "https://bitbucket.org/"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/"
+  },
+  "keywords": [
+    "React",
+    "Rust",
+    "Tauri",
+    "Vite",
+    "typescript"
+  ],
+  "type": "module",
+  "main": "./dist/sensit-library.umd.cjs",
+  "module": "./dist/sensit-library.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/sensit-library.js",
+      "require": "./dist/sensit-library.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@mui/material": "^5.11.7",
+    "react-material-ui-carousel": "^3.4.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.18.5",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "jest": "^29.4.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^1.7.3"
+  }
+}
