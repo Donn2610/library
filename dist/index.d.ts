@@ -1,1 +1,1 @@
-export { default as CustomCarousel } from './custom-carousel/custom-carousel';
+export { CustomCarousel } from './custom-carousel/custom-carousel';

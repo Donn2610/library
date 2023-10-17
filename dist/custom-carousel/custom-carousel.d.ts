@@ -9,5 +9,5 @@ interface Props {
     textColor: string;
     backgroundColor: string;
 }
-declare const CustomCarousel: React.FC<Props>;
-export default CustomCarousel;
+export declare const CustomCarousel: React.FC<Props>;
+export {};

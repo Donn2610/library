@@ -11,7 +11,7 @@ interface Props {
   backgroundColor: string
 }
 
-const CustomCarousel: React.FC<Props> = ({
+export const CustomCarousel: React.FC<Props> = ({
   carouselItems,
   setSelectedItem, fontSize, textColor, backgroundColor
 }) => {
@@ -73,5 +73,3 @@ function navButtonStyle (textColor: string): React.CSSProperties {
     margin: '0px'
   }
 }
-
-export default CustomCarousel
