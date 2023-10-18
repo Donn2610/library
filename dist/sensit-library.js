@@ -65023,19 +65023,14 @@ Object.defineProperty(rD, "__esModule", { value: !0 });
 var Hde = Ude(oD), Wde = rD.default = Hde.default;
 const efe = (e) => {
   const { carouselItems: t, backgroundColor: a, setSelectedItem: s, fontSize: c, textColor: f, fontFamily: p } = e;
-  return /* @__PURE__ */ X("div", { children: /* @__PURE__ */ X(
+  return /* @__PURE__ */ X(
     Wde,
     {
-      autoPlay: !1,
-      navButtonsAlwaysVisible: !0,
-      strictIndexing: !0,
-      cycleNavigation: !1,
       navButtonsProps: { style: Xde(f) },
       onChange: (g) => {
         s(t[g].content);
       },
       sx: Kde(a),
-      indicators: !1,
       children: t.map((g, y) => /* @__PURE__ */ X(
         Gde,
         {
@@ -65048,7 +65043,7 @@ const efe = (e) => {
         y
       ))
     }
-  ) });
+  );
 };
 function Gde(e) {
   return /* @__PURE__ */ X(Vs, { style: qde(e.backgroundColor), children: /* @__PURE__ */ X("p", { style: Yde(e.fontSize, e.textColor, e.fontFamily), children: e.item.title }) });
