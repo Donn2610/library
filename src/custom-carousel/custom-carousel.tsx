@@ -15,10 +15,12 @@ interface Props {
 export const CustomCarousel: React.FC<Props> = (props) => {
   const { carouselItems, backgroundColor, setSelectedItem, fontSize, textColor, fontFamily } = props;
   return (
-    <Carousel 
-        navButtonsProps={{ style: navButtonStyle(textColor) }}
+    <Carousel autoPlay={false}
+        navButtonsAlwaysVisible={true}
+        strictIndexing={true}
+        cycleNavigation={false}
         onChange={(now: number | undefined) => { setSelectedItem(carouselItems[now!].content) }}
-        sx={carouselStyle(backgroundColor)}>
+        sx={carouselStyle(backgroundColor)} indicators={false}>
         {
         carouselItems.map((item, i) => <Item key={i} item={item}
           fontSize={fontSize} textColor={textColor} backgroundColor={backgroundColor} fontFamily={fontFamily} />)

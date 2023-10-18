@@ -25559,7 +25559,7 @@ Check the render method of \`` + n + "`." : "";
         };
       }
     }
-    function Qde(n) {
+    function Xde(n) {
       return n;
     }
     function lF(n) {
@@ -28046,9 +28046,9 @@ Incoming: %s`, yt, "[" + o.join(", ") + "]", "[" + n.join(", ") + "]");
       }
       return [B, S];
     }
-    function Zde(n, o, u) {
+    function Qde(n, o, u) {
     }
-    function Jde(n, o, u) {
+    function Zde(n, o, u) {
     }
     function fT(n, o, u) {
       var d = jr, m = xc(), S, N = oi();
@@ -65021,16 +65021,20 @@ var Ude = Xn && Xn.__importDefault || function(e) {
 };
 Object.defineProperty(rD, "__esModule", { value: !0 });
 var Hde = Ude(oD), Wde = rD.default = Hde.default;
-const efe = (e) => {
+const Jde = (e) => {
   const { carouselItems: t, backgroundColor: a, setSelectedItem: s, fontSize: c, textColor: f, fontFamily: p } = e;
   return /* @__PURE__ */ X(
     Wde,
     {
-      navButtonsProps: { style: Xde(f) },
+      autoPlay: !1,
+      navButtonsAlwaysVisible: !0,
+      strictIndexing: !0,
+      cycleNavigation: !1,
       onChange: (g) => {
         s(t[g].content);
       },
       sx: Kde(a),
+      indicators: !1,
       children: t.map((g, y) => /* @__PURE__ */ X(
         Gde,
         {
@@ -65072,13 +65076,6 @@ function Kde(e) {
     background: e
   };
 }
-function Xde(e) {
-  return {
-    background: "transparent",
-    color: e,
-    margin: "0px"
-  };
-}
 export {
-  efe as CustomCarousel
+  Jde as CustomCarousel
 };
