@@ -65035,30 +65035,24 @@ const Qde = ({
     navButtonsAlwaysVisible: !0,
     strictIndexing: !0,
     cycleNavigation: !1,
-    navButtonsProps: { style: Yde(s) },
+    navButtonsProps: { style: Yde },
     onChange: (p) => {
       t(e[p].content);
     },
-    sx: Gde(c),
+    sx: Gde,
     indicators: !1
   }
-);
-function Gde(e) {
-  return {
-    height: "30px",
-    width: "220px",
-    borderRadius: "4px",
-    textAlign: "center",
-    background: e
-  };
-}
-function Yde(e) {
-  return {
-    background: "transparent",
-    color: e,
-    margin: "0px"
-  };
-}
+), Gde = {
+  height: "30px",
+  width: "220px",
+  borderRadius: "4px",
+  textAlign: "center",
+  background: "#2D3339"
+}, Yde = {
+  background: "transparent",
+  color: "#9199A1",
+  margin: "0px"
+};
 export {
   Qde as CustomCarousel
 };
