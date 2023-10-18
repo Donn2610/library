@@ -8,6 +8,7 @@ interface Props {
     fontSize: string;
     textColor: string;
     backgroundColor: string;
+    fontFamily: string;
 }
 export declare const CustomCarousel: React.FC<Props>;
 export {};

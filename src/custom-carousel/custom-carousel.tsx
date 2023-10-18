@@ -9,28 +9,40 @@ interface Props {
   fontSize: string
   textColor: string
   backgroundColor: string
+  fontFamily: string
 }
 
 export const CustomCarousel: React.FC<Props> = ({
   carouselItems,
-  setSelectedItem, fontSize, textColor, backgroundColor
+  setSelectedItem, fontSize, textColor, backgroundColor, fontFamily
 }) => {
   return (
-    <div>Hello</div>
+    <Carousel autoPlay={false}
+        navButtonsAlwaysVisible={true}
+        strictIndexing={true}
+        cycleNavigation={false}
+        navButtonsProps={{ style: navButtonStyle(textColor) }}
+        onChange={(now: number | undefined) => { setSelectedItem(carouselItems[now!].content) }}
+        sx={carouselStyle(backgroundColor)} indicators={false}>
+        {
+        carouselItems.map((item, i) => <Item key={i} item={item}
+          fontSize={fontSize} textColor={textColor} backgroundColor={backgroundColor} fontFamily={fontFamily} />)
+        }
+    </Carousel>
   )
 }
 
 function Item (props: any): JSX.Element {
   return (
     <Paper style={paperStyle(props.backgroundColor)}>
-        <p style={titleStyle(props.fontSize, props.textColor)}>{props.item.title}</p>
+        <p style={titleStyle(props.fontSize, props.textColor, props.fontFamily)}>{props.item.title}</p>
     </Paper>
   )
 }
 
-function titleStyle (fontSize: string, textColor: string): React.CSSProperties {
+function titleStyle (fontSize: string, textColor: string, fontFamily: string): React.CSSProperties {
   return {
-    fontFamily: 'IBM',
+    fontFamily,
     fontSize,
     color: textColor
   }
