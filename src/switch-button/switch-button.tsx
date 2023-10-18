@@ -13,11 +13,11 @@ export const SwitchButton: React.FC<SwitchButtonProps> = ({ onToggle, checked })
   }
 
   return (
-    <Switch disableRipple
-      sx={switchStyle(checked)}
-      style={{ background: 'transparent' }}
-      checked={checked}
-      onChange={handleToggle}
+    <Switch
+      // sx={switchStyle(checked)}
+      // style={{ background: 'transparent' }}
+      // checked={checked}
+      // onChange={handleToggle}
     />
   )
 }
