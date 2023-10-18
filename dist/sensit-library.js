@@ -65021,36 +65021,35 @@ var Ude = Xn && Xn.__importDefault || function(e) {
 };
 Object.defineProperty(rD, "__esModule", { value: !0 });
 var Hde = Ude(oD), Wde = rD.default = Hde.default;
-const efe = ({
-  carouselItems: e,
-  setSelectedItem: t,
-  fontSize: a,
-  textColor: s,
-  backgroundColor: c,
-  fontFamily: f
-}) => /* @__PURE__ */ X(
-  Wde,
-  {
-    autoPlay: !1,
-    navButtonsAlwaysVisible: !0,
-    strictIndexing: !0,
-    cycleNavigation: !1,
-    navButtonsProps: { style: Xde(s) },
-    sx: Kde(c),
-    indicators: !1,
-    children: e.map((p, g) => /* @__PURE__ */ X(
-      Gde,
-      {
-        item: p,
-        fontSize: a,
-        textColor: s,
-        backgroundColor: c,
-        fontFamily: f
+const efe = (e) => {
+  const { carouselItems: t, backgroundColor: a, setSelectedItem: s, fontSize: c, textColor: f, fontFamily: p } = e;
+  return /* @__PURE__ */ X(
+    Wde,
+    {
+      autoPlay: !1,
+      navButtonsAlwaysVisible: !0,
+      strictIndexing: !0,
+      cycleNavigation: !1,
+      navButtonsProps: { style: Xde(f) },
+      onChange: (g) => {
+        s(t[g].content);
       },
-      g
-    ))
-  }
-);
+      sx: Kde(a),
+      indicators: !1,
+      children: t.map((g, y) => /* @__PURE__ */ X(
+        Gde,
+        {
+          item: g,
+          fontSize: c,
+          textColor: f,
+          backgroundColor: a,
+          fontFamily: p
+        },
+        y
+      ))
+    }
+  );
+};
 function Gde(e) {
   return /* @__PURE__ */ X(Vs, { style: qde(e.backgroundColor), children: /* @__PURE__ */ X("p", { style: Yde(e.fontSize, e.textColor, e.fontFamily), children: e.item.title }) });
 }
