@@ -65036,8 +65036,7 @@ const efe = ({
     strictIndexing: !0,
     cycleNavigation: !1,
     navButtonsProps: { style: Xde(s) },
-    onChange: (p) => {
-      t(e[p].content);
+    onChange: () => {
     },
     sx: Kde(c),
     indicators: !1,
