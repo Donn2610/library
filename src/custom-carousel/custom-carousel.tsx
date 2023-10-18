@@ -21,17 +21,19 @@ export const CustomCarousel: React.FC<Props> = ({
         navButtonsAlwaysVisible={true}
         strictIndexing={true}
         cycleNavigation={false}
-        navButtonsProps={{ style: navButtonStyle }}
-        onChange={(now: number | undefined) => { setSelectedItem(carouselItems[now!].content) }}
-        sx={carouselStyle} indicators={false}>
-        
+        navButtonsProps={{ style: navButtonStyle(textColor) }}
+        sx={carouselStyle(backgroundColor)} indicators={false}>
+        {
+        carouselItems.map((item, i) => <Item key={i} item={item}
+          fontSize={fontSize} textColor={textColor} backgroundColor={backgroundColor} fontFamily={fontFamily} />)
+        }
     </Carousel>
   )
 }
 
 function Item (props: any): JSX.Element {
   return (
-    <Paper style={paperStyle}>
+    <Paper style={paperStyle(props.backgroundColor)}>
         <p style={titleStyle(props.fontSize, props.textColor, props.fontFamily)}>{props.item.title}</p>
     </Paper>
   )
@@ -45,23 +47,29 @@ function titleStyle (fontSize: string, textColor: string, fontFamily: string): R
   }
 }
 
-const paperStyle: React.CSSProperties = {
+function paperStyle (backgroundColor: string): React.CSSProperties {
+  return {
     borderRadius: '4px',
-    background: '#2D3339',
+    background: backgroundColor,
     height: '30px',
     paddingTop: '3px'
+  }
 }
 
-const carouselStyle: React.CSSProperties = {
+function carouselStyle (backgroundColor: string): React.CSSProperties {
+  return {
     height: '30px',
     width: '220px',
     borderRadius: '4px',
     textAlign: 'center',
-    background: '#2D3339'
+    background: backgroundColor
+  }
 }
 
-const navButtonStyle: React.CSSProperties = {
+function navButtonStyle (textColor: string): React.CSSProperties {
+  return {
     background: 'transparent',
-    color: '#9199A1',
+    color: textColor,
     margin: '0px'
+  }
 }
