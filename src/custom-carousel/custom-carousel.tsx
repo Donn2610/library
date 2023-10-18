@@ -20,11 +20,7 @@ export const CustomCarousel: React.FC<Props> = (props) => {
         strictIndexing={true}
         cycleNavigation={false}
         
-        indicators={false}>
-        {
-        carouselItems.map((item, i) => <Item key={i} item={item}
-          fontSize={fontSize} textColor={textColor} backgroundColor={backgroundColor} fontFamily={fontFamily} />)
-        }
+        indicators={false}>Hello
     </Carousel>
   )
 }
