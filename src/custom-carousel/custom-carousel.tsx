@@ -19,8 +19,8 @@ export const CustomCarousel: React.FC<Props> = (props) => {
         navButtonsAlwaysVisible={true}
         strictIndexing={true}
         cycleNavigation={false}
-        onChange={(now: number | undefined) => { setSelectedItem(carouselItems[now!].content) }}
-        sx={carouselStyle(backgroundColor)} indicators={false}>
+        
+        indicators={false}>
         {
         carouselItems.map((item, i) => <Item key={i} item={item}
           fontSize={fontSize} textColor={textColor} backgroundColor={backgroundColor} fontFamily={fontFamily} />)
