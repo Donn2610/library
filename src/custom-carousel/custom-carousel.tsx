@@ -12,8 +12,9 @@ interface Props {
   backgroundColor: string
 }
 
-export const CustomCarousel: React.FC<Props> = ({ carouselItems, setSelectedItem, fontFamily, fontSize, textColor, backgroundColor }) => {
-  return (
+export const CustomCarousel: React.FC<Props> =
+  ({ carouselItems, setSelectedItem, fontFamily, fontSize, textColor, backgroundColor }) => {
+    return (
     <Carousel autoPlay={false}
         navButtonsAlwaysVisible={true}
         strictIndexing={true}
@@ -22,11 +23,12 @@ export const CustomCarousel: React.FC<Props> = ({ carouselItems, setSelectedItem
         onChange={(now) => { setSelectedItem(carouselItems[now!].content) }}
         sx={carouselStyle(backgroundColor)} indicators={false}>
         {
-        carouselItems.map((item, i) => <Item key={i} item={item} fontFamily={fontFamily} fontSize={fontSize} textColor={textColor} backgroundColor={backgroundColor} />)
+          carouselItems.map((item, i) => <Item key={i} item={item}
+            fontFamily={fontFamily} fontSize={fontSize} textColor={textColor} backgroundColor={backgroundColor} />)
         }
     </Carousel>
-  )
-}
+    )
+  }
 
 function Item (props: any): JSX.Element {
   return (
@@ -36,7 +38,7 @@ function Item (props: any): JSX.Element {
   )
 }
 
-function titleStyle(fontFamily: string, fontSize: string, textColor: string): React.CSSProperties {
+function titleStyle (fontFamily: string, fontSize: string, textColor: string): React.CSSProperties {
   return {
     fontFamily,
     fontSize,
@@ -44,7 +46,7 @@ function titleStyle(fontFamily: string, fontSize: string, textColor: string): Re
   }
 }
 
-function paperStyle(backgroundColor: string): React.CSSProperties {
+function paperStyle (backgroundColor: string): React.CSSProperties {
   return {
     borderRadius: '4px',
     background: backgroundColor,
@@ -53,7 +55,7 @@ function paperStyle(backgroundColor: string): React.CSSProperties {
   }
 }
 
-function carouselStyle(backgroundColor: string): React.CSSProperties {
+function carouselStyle (backgroundColor: string): React.CSSProperties {
   return {
     height: '30px',
     width: '220px',
@@ -63,7 +65,7 @@ function carouselStyle(backgroundColor: string): React.CSSProperties {
   }
 }
 
-function navButtonStyle(textColor: string): React.CSSProperties {
+function navButtonStyle (textColor: string): React.CSSProperties {
   return {
     background: 'transparent',
     color: textColor,

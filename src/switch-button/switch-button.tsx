@@ -11,23 +11,29 @@ interface SwitchButtonProps {
   bgThumbCheckedAfter: string
 }
 
-export const SwitchButton: React.FC<SwitchButtonProps> = ({ onToggle, checked, bgTrackChecked,bgTrackUnChecked, bgThumbCheckedBefore, bgThumbUnCheckedBefore, bgThumbCheckedAfter  }) => {
-  const handleToggle = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const newCheckedState = event.target.checked
-    onToggle(newCheckedState)
+export const SwitchButton: React.FC<SwitchButtonProps> =
+  ({
+    onToggle, checked, bgTrackChecked, bgTrackUnChecked,
+    bgThumbCheckedBefore, bgThumbUnCheckedBefore, bgThumbCheckedAfter
+  }) => {
+    const handleToggle = (event: React.ChangeEvent<HTMLInputElement>): void => {
+      const newCheckedState = event.target.checked
+      onToggle(newCheckedState)
+    }
+
+    return (
+      <Switch
+        sx={switchStyle(checked, bgTrackChecked, bgTrackUnChecked, bgThumbCheckedBefore, bgThumbUnCheckedBefore,
+          bgThumbCheckedAfter)}
+        style={{ background: 'transparent' }}
+        checked={checked}
+        onChange={handleToggle}
+      />
+    )
   }
 
-  return (
-    <Switch
-      sx={switchStyle(checked, bgTrackChecked, bgTrackUnChecked, bgThumbCheckedBefore, bgThumbUnCheckedBefore, bgThumbCheckedAfter)}
-      style={{ background: 'transparent' }}
-      checked={checked}
-      onChange={handleToggle}
-    />
-  )
-}
-
-function switchStyle (checked: boolean, bgTrackChecked: string, bgTrackUnChecked: string, bgThumbCheckedBefore: string, bgThumbUnCheckedBefore: string,bgThumbCheckedAfter: string): SxProps<Theme> {
+function switchStyle (checked: boolean, bgTrackChecked: string, bgTrackUnChecked: string, bgThumbCheckedBefore: string,
+  bgThumbUnCheckedBefore: string, bgThumbCheckedAfter: string): SxProps<Theme> {
   return {
     '& .MuiSwitch-track': {
       background: checked ? bgTrackChecked : bgTrackUnChecked
