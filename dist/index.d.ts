@@ -1,1 +1,1 @@
-export { CustomCarousel } from './custom-carousel/custom-carousel';
+export { SwitchButton } from './switch-button/switch-button';
